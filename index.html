@@ -44,7 +44,9 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 h-screen flex flex-col overflow-hidden">
+<!-- <body class="bg-slate-50 text-slate-800 h-screen flex flex-col overflow-hidden"> -->
+<body class="bg-slate-50 text-slate-800 h-[100dvh] flex flex-col overflow-hidden">
+
 
     <header class="bg-slate-900 text-white shadow-md flex-shrink-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap sm:flex-nowrap justify-between items-center gap-3">
@@ -80,8 +82,12 @@
         </div>
     </header>
 
-    <main class="flex-1 overflow-y-auto relative bg-slate-50 w-full custom-scrollbar" id="main-scroll-area">
-        <div class="max-w-5xl mx-auto px-2 sm:px-4 py-6 pb-32">
+    <!-- <main class="flex-1 overflow-y-auto relative bg-slate-50 w-full custom-scrollbar" id="main-scroll-area"> -->
+    <main class="flex-1 min-h-0 overflow-y-auto relative bg-slate-50 w-full custom-scrollbar" id="main-scroll-area">
+
+        <!-- <div class="max-w-5xl mx-auto px-2 sm:px-4 py-6 pb-32"> -->
+        <div class="max-w-5xl mx-auto px-2 sm:px-4 py-6 pb-40">
+
             
             <div id="loading" class="text-center py-32 text-slate-400 flex flex-col items-center">
                 <i data-lucide="loader-2" class="animate-spin mb-4 text-amber-500 w-10 h-10"></i>
@@ -101,7 +107,10 @@
         </div>
     </main>
 
-    <div class="bg-white border-t border-slate-200 shadow-lg z-40 flex-shrink-0">
+    <!-- <div class="bg-white border-t border-slate-200 shadow-lg z-40 flex-shrink-0"> -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-lg z-40 pb-[env(safe-area-inset-bottom)]">
+
+
         <div class="max-w-5xl mx-auto">
             <div id="active-tags" class="hidden px-4 py-2 border-b border-slate-100 bg-slate-50 flex items-center gap-2 overflow-x-auto no-scrollbar">
                 <span class="text-[10px] font-bold text-slate-400 flex-shrink-0"><i data-lucide="filter" class="inline w-3 h-3"></i> 絞込中:</span>
@@ -221,7 +230,7 @@
         const apiKey = ""; // 必要であればここにGemini APIキーを入力
         const STORAGE_KEY = 'world_history_ultimate_v2'; 
 
-// --- 究極完全版データセット ---
+// --- データセット ---
         const FULL_DATA = [
             [-8000, '新石器革命（農耕・牧畜開始）', '肥沃な三日月地帯などで麦の栽培と家畜化が始まる。定住生活への移行。獲得経済から生産経済へ。', ['世界','古代','文化']],
             [-7000, '長江稲作文化', '河姆渡遺跡など。長江流域で稲作が発達。高床式住居。', ['中国','古代','文化']],
