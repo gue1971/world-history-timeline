@@ -141,8 +141,15 @@
         </div>
     </div>
 
-    <div id="detail-modal" class="fixed inset-0 bg-slate-900/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden">
-        <div class="bg-white w-full max-w-lg rounded-xl shadow-2xl overflow-hidden animate-in transform scale-100 relative max-h-[90vh] flex flex-col">
+    <!-- <div id="detail-modal" class="fixed inset-0 bg-slate-900/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden"> -->
+    <div id="detail-modal"
+     class="fixed inset-0 bg-slate-900/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden"
+     onclick="app.closeModal('detail-modal')">
+
+        <!-- <div class="bg-white w-full max-w-lg rounded-xl shadow-2xl overflow-hidden animate-in transform scale-100 relative max-h-[90vh] flex flex-col"> -->
+        <div class="bg-white w-full max-w-lg rounded-xl shadow-2xl overflow-hidden animate-in transform scale-100 relative max-h-[90vh] flex flex-col"
+     onclick="event.stopPropagation()">
+
             <button onclick="app.closeModal('detail-modal')" class="absolute top-4 right-4 p-1.5 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-500 transition-colors z-10">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
@@ -2945,13 +2952,6 @@
                 this.loadData();
                 this.setupListeners();
                 this.setupInfiniteScroll();
-
-                // スマホ幅は初期表示を「一行ずつ（compact）」にする
-                // ※ユーザーが後で切り替えたらその場では反映される（今は永続保存はしていない）
-                if (window.matchMedia && window.matchMedia('(max-width: 640px)').matches) {
-                    this.viewMode = 'compact';
-                }
-
                 this.renderCenturyNav(); // 【重要】時代ナビゲーションの生成
                 this.render();
             },
