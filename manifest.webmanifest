@@ -3,7 +3,7 @@
   "short_name": "世界史年表",
   "start_url": "./",
   "scope": "./",
-  "display": "fullscreen",
+  "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "icons": [
